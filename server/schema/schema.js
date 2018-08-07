@@ -57,6 +57,18 @@ const RootQuery = new GraphQLObjectType({
         return Developer.findById(args.id);
       },
     },
+    games: {
+      type: new GraphQLList(GameType),
+      resolve(parent, args) {
+        return Game.find({});
+      },
+    },
+    developers: {
+      type: new GraphQLList(DeveloperType),
+      resolve(parent, args) {
+        return Developer.find({});
+      },
+    },
   },
 });
 
