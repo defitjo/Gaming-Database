@@ -73,6 +73,43 @@ const RootQuery = new GraphQLObjectType({
   },
 });
 
+const Mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: {
+    addDeveloper: {
+      type: DeveloperType,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve(parent, args) {
+        const developer = new Developer({
+          name: args.name,
+        });
+        return developer.save();
+      },
+    },
+    addGame: {
+      type: GameType,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        genre: { type: new GraphQLNonNull(GraphQLString) },
+        date: { type: new GraphQLNonNull(GraphQLString) },
+        developerId: { type: new GraphQLNonNull(GraphQLID) },
+      },
+      resolve(parent, args) {
+        const game = new Game({
+          name: args.name,
+          genre: args.genre,
+          date: args.date,
+          developerId: args.developerId,
+        });
+        return game.save();
+      },
+    },
+  },
+});
+
 module.exports = new GraphQLSchema({
   query: RootQuery,
+  mutation: Mutation,
 });
