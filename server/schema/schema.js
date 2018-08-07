@@ -1,4 +1,6 @@
 const graphql = require('graphql');
+const Game = require('../models/game');
+const Developer = require('../models/developer');
 
 const {
   GraphQLObjectType,
@@ -6,7 +8,6 @@ const {
   GraphQLID,
   GraphQLList,
   GraphQLNonNull,
-  GraphQLInt,
   GraphQLSchema,
 } = graphql;
 
