@@ -37,17 +37,18 @@ class AddGame extends Component {
   render() {
     return (
       <form id="add-game" onSubmit={this.formSubmit.bind(this)}>
+        <h3 className="form-title">Add Game to Library</h3>
         <div className="form-body">
           <label>Name of Game:</label>
-          <input type="text" onChange={(e) => this.setState({name: e.target.value})} />
+          <input type="text" onChange={(e) => this.setState({name: e.target.value})} required />
         </div>
         <div className="form-body">
           <label>Genre:</label>
-          <input type="text" onChange={(e) => this.setState({genre: e.target.value})} />
+          <input type="text" onChange={(e) => this.setState({genre: e.target.value})} required />
         </div>
         <div className="form-body">
           <label>Release Date:</label>
-          <input type="date" onChange={(e) => this.setState({date: e.target.value})} />
+          <input type="date" onChange={(e) => this.setState({date: e.target.value})} required />
         </div>
         <div className="form-body">
           <label>Developer:</label>

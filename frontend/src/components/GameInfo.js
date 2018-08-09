@@ -8,10 +8,10 @@ class GameInfo extends Component {
     if (game) {
       return(
         <div>
-          <h2>{game.name}</h2>
-          <p>{game.genre}</p>
-          <p>{game.date}</p>
-          <p>{game.developer.name}</p>
+          <h2><span>Title:</span> {game.name}</h2>
+          <p>Genre: {game.genre}</p>
+          <p>Release Date: {game.date}</p>
+          <p>Developer: {game.developer.name}</p>
           <p>Games by {game.developer.name}:</p>
           <ul className="more-games">
             { game.developer.games.map(item => {
@@ -22,7 +22,7 @@ class GameInfo extends Component {
       )
     } else {
       return(
-        <div>Select a game</div>
+        <div id="game-select">Select a game</div>
       );
     }
   }
