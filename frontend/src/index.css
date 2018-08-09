@@ -33,7 +33,6 @@ span {
   border-radius: 5px;
   margin: 15px;
   padding: 10px;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
   color: #0275d8;
   cursor: pointer;
 }
@@ -41,6 +40,10 @@ span {
 #ps4-game-list li:hover {
   background: #0275d8;
   color: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+  -webkit-transition: border-radius 0.1s, background 0.3s;
 }
 
 form {
