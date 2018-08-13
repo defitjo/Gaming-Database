@@ -48,8 +48,8 @@ span {
 
 form {
   background: rgb(247, 245, 245);
-  position: fixed;
-  width: 30%;
+  position: inherit;
+  width: 50%;
   border-radius: 5px;
   border: 1px solid #0275d8;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
@@ -58,6 +58,7 @@ form {
   padding: 25px;
   padding-top: 10px;
   padding-bottom: 40px;
+  margin: auto;
   color: #0275d8;
 }
 
@@ -91,7 +92,7 @@ form button {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  position: absolute;
+  position: inherit;
   bottom: 5px;
   right: 25px;
 }
@@ -131,5 +132,9 @@ form button {
     position: relative;
     width: 85%;
     margin-top: 10px;
+  }
+
+  form button {
+    margin-left: 25px;
   }
 }
