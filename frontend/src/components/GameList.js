@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { getGamesQuery } from '../query/query';
-
 import GameInfo from './GameInfo';
 
 class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chosen: null
-    }
+      chosen: null,
+    };
   }
   showGames() {
-    let data = this.props.data;
+    const data = this.props.data;
     if (data.loading) {
       return (<div>Games Loading...</div>);
     } else {
@@ -25,7 +24,7 @@ class GameList extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="game-list">
         <ul id="ps4-game-list">
           {this.showGames()}
         </ul>
